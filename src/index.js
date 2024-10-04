@@ -1,3 +1,6 @@
 import "./style.css";
+import { addElements } from "./addElements";
 
-console.log("hello")
+document.addEventListener("DOMContentLoaded", () => {
+    addElements()
+})
