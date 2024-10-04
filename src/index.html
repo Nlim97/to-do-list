@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <title>Document</title>
 </head>
 <body>
@@ -14,7 +15,28 @@
         <div class="tasks">
             <h2>Tasks</h2>
         </div>
+    </div>
+    <div class="project-form-container"> 
+        <i class="material-icons close-project-form" style="margin: 0; padding: 0;">close</i>
+        <form id="project-form">
+            <label for="project-title">Project title</label>
+            <input type="text" name="title" id="project-title" required>
 
+            <label for="project-description">Project description</label>
+           <textarea name="project-description" id="project-description" rows="4"></textarea> 
+
+            <label for="due-date">Due date</label>
+            <input type="date" name="due-date" id="due-date" required>
+
+            <label for="priority">Priority</label>
+            <select name="priority" id="priority">
+                <option value="high">High</option>
+                <option value="medium">Medium</option>
+                <option value="low">Low</option>
+            </select>
+
+            <button class="submit-project-form" type="submit">Add</button>
+        </form>
     </div>
 </body>
 </html>
