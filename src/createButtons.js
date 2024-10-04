@@ -1,9 +1,13 @@
+import { showAddProjectForm } from "./buttonEventHandler"
+
 export const createAddProjectButton = () => {
     const addNewProjectDiv = document.createElement("div")
     const addNewProjectButton = document.createElement("button")
 
     addNewProjectDiv.classList.add("add-project")
     addNewProjectButton.classList.add("add-project-button")
+
+    addNewProjectButton.addEventListener("click", showAddProjectForm)
 
     addNewProjectButton.innerHTML = "Add New Project"
 

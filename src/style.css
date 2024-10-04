@@ -11,19 +11,55 @@ body{
     margin: 0;
 }
 .content{
-    padding-left: 50px;
-    padding-right: 50px;
     display: grid;
     grid-template-columns: 1fr 2fr;
-    gap: 30px;
-    height: calc(100vh - 140px);
+    width: 100vw;
 }
 .projects, .tasks{
     border: 2px black solid;
+    margin: 30px;
     border-radius: 10px;
-    height: 100%;
+    height: calc(100vh - 170px);
     padding: 20px;
+    
 }
 .projects h2, .tasks h2{
     margin-top: 0;
+}
+.project-form-container{
+    width: 300px;
+    border: 2px black solid;
+    padding: 5px;
+    background-color: 	#E1E8ED;
+    position: absolute;
+    top: 200px;
+    left: 100px;
+    display: none;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    background-color: 	#E1E8ED;
+    padding: 5px;
+}
+form button{
+    width: 150px;
+    border-radius: 4px;
+}
+.projects-container{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-top: 5px;
+}
+.project-tab{
+    display: flex;
+    border: 2px black solid;
+    gap: 5px;
+    padding: 3px;
+    align-items: center;
+}
+.project-tab p {
+    font-size: 10px;
 }
