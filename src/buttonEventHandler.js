@@ -1,20 +1,34 @@
-import { displayStoredProjects } from "./displayProjects"
-import { submitAddProjectForm } from "./submitForm"
+import { submitAddProjectForm, submitTaskForm } from "./submitForm"
 
 export const intialiseEventHandlers = () => {
     const addProjectForm = document.querySelector(".project-form-container")
-    const closeButton = document.querySelector(".close-project-form")
-    const form = document.querySelector("#project-form")
+    const closeProjectButton = document.querySelector(".close-project-form")
+    const ProjectForm = document.querySelector("#project-form")
 
-    closeButton.addEventListener("click", () => closeProjectForm(addProjectForm))
+    const addTaskForm = document.querySelector(".task-form-container")
+    const closeTaskForm = document.querySelector(".close-task-form")
+    const taskForm = document.querySelector("#task-form")
 
-    form.addEventListener("submit", (event) => {
+    closeProjectButton.addEventListener("click", () => closeForm(addProjectForm))
+
+    ProjectForm.addEventListener("submit", (event) => {
         event.preventDefault()
-        const formData = new FormData(form);
+        const formData = new FormData(ProjectForm);
         submitAddProjectForm(formData)
-        form.reset()
-        closeProjectForm(addProjectForm)
+        ProjectForm.reset()
+        closeForm(addProjectForm)
 
+    })
+
+    closeTaskForm.addEventListener("click", () => {closeForm(addTaskForm)})
+
+    taskForm.addEventListener("submit", (event) => {
+        event.preventDefault()
+        const projectTitle = taskForm.className
+        const formData = new FormData(taskForm);
+        submitTaskForm(formData, projectTitle)
+        taskForm.reset()
+        closeForm(addTaskForm)
     })
 
 }
@@ -22,12 +36,11 @@ export const intialiseEventHandlers = () => {
 
 
 
-export const showAddProjectForm = () => {
-    const addProjectForm = document.querySelector(".project-form-container")
-    addProjectForm.style.display = "flex" 
+export const showForm = (projectOrTaskContainer) => {
+    projectOrTaskContainer.style.display = "flex" 
 
 }
 
-export const closeProjectForm = (addProjectForm) => {
-    addProjectForm.style.display = "none"
+export const closeForm = (projectOrTaskForm) => {
+    projectOrTaskForm.style.display = "none"
 }

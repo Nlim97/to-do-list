@@ -21,6 +21,7 @@ body{
     border-radius: 10px;
     height: calc(100vh - 170px);
     padding: 20px;
+    overflow: scroll;
     
 }
 .projects h2, .tasks h2{
@@ -52,6 +53,7 @@ form button{
     flex-direction: column;
     gap: 5px;
     margin-top: 5px;
+    
 }
 .project-tab{
     display: flex;
@@ -62,4 +64,14 @@ form button{
 }
 .project-tab p {
     font-size: 10px;
+}
+.task-form-container{
+    width: 300px;
+    border: 2px black solid;
+    padding: 5px;
+    background-color: 	#E1E8ED;
+    position: absolute;
+    top: 200px;
+    left: 550px;
+    display: none;
 }

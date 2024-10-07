@@ -1,5 +1,8 @@
 import { createProjectTab } from "./createTabs"
-import { saveProject } from "./localStorage"
+import { displayTask } from "./displayProjectsAndTasks"
+import { saveProject, saveTask } from "./localStorage"
+import { showTask } from "./showTask"
+
 
 export const submitAddProjectForm = (formData) => {
     const projectTitle = formData.get("title")
@@ -21,4 +24,16 @@ export const submitAddProjectForm = (formData) => {
 
     saveProject(projectObj)
     createProjectTab(projectObj)
-}   
+}  
+
+export const submitTaskForm = (formData, projectTitle) => {
+    const taskTitle = formData.get("task-title")
+    const taskDescription = formData.get("task-description")
+
+    const taskObj = {
+        taskTitle : taskTitle,
+        taskDescription: taskDescription
+    }
+    saveTask(taskObj, projectTitle)
+    showTask(projectTitle)
+}
