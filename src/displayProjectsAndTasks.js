@@ -1,5 +1,6 @@
 import { capitaliseString } from "./capitaliseString"
 import { createProjectTab } from "./createTabs"
+import { deleteTask } from "./localStorage"
 
 export const displayStoredProjects = () => {
     for(let i = 0; i < localStorage.length; i++){
@@ -34,7 +35,7 @@ export const displayTask = (taskArray, projectTitle) => {
         deleteTaskButton.addEventListener("click", (e) => {
             const task = e.target.closest("div")
             const taskTitle = task.querySelector("h3").innerHTML
-            
+            deleteTask(taskTitle, projectTitle)
             task.remove()
         })
     })
