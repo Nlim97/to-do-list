@@ -2,6 +2,11 @@ export const saveProject = (projectObj) => {
     localStorage.setItem(projectObj.title, JSON.stringify(projectObj))
 }
 
+export const deleteProject = (projectName) => {
+    const key = projectName.toLowerCase()
+    localStorage.removeItem(key)
+}
+
 export const saveTask = (taskObj, projectTitle) => {
     let projectFound = false
     for(let i = 0; i < localStorage.length; i++){
